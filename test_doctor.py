@@ -38,15 +38,41 @@ def test_doctor_can_schedule_surgery():
 	assert Meredith.patients[num_patients].or_number == "3"
 	assert Meredith.patients[num_patients].surgery_type == "appendectomy"
 
-def calc_patients(month1, month2, month3):
-	average = (month1 + month2 + month3) / 3
-	return average
+def month1():
+	return (35)
 
-def number_of_patients_in_a_quarter():
-	month1 = float( input("enter number of patients: " ))
-	month2 = float( input("enter number of patients: " ))
-	month3 = float( input("enter number of patients: " ))
+def month2():
+	return (43)
 
-	return month1, month2, month3
+def month3():
+	return (37)
+
+# calculate total number of patients per doctor in a quarter of a year
+def calc_total_patients(month1, month2, month3):
+	total = (month1 + month2 + month3) 
+	return total
+
+# calculate average number of patients in a quarter per doctor
+# got from https://www.geeksforgeeks.org/find-average-list-python/
+from functools import reduce
+ 
+def average_patients(lst):
+    return reduce(lambda a, b: a + b, lst) / len(lst)
+ 
+# Driver Code
+lst = [35, 43, 37]
+average = average_patients(lst)
+ 
+# Printing average of the list
+print("Average of the list =", round(average, 2))
+
+
+
+
+
+
+
+
+
 
 
